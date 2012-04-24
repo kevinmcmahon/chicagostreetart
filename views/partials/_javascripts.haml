@@ -1,0 +1,27 @@
+-# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary
+%script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+:javascript
+  window.jQuery || document.write("<script src='/js/lib/jquery-1.6.2.min.js'>\x3C/script>")
+
+%script(type="text/javascript" src="http://use.typekit.com/prh5rfl.js")
+%script(type="text/javascript")try{Typekit.load();}catch(e){}
+
+-# Application scripts
+
+%script(type="text/javascript" src="/js/lib/plugins.js")
+%script(type="text/javascript" src="/js/application.js")
+%script(type="text/javascript" src="/js/lib/mylibs/helper.js")
+%script(type="text/javascript" src="/js/location.js"))
+
+/[if (lt IE 9) & (!IEMobile)]
+  %script(type="text/javascript" src="/js/lib/mylibs/imgsizer.js")
+
+:javascript
+  // iOS scale bug fix
+  MBP.scaleFix();
+
+  // Respond.js
+  yepnope({
+      test : Modernizr.mq('(only all)'),
+      nope : ['/js/lib/respond.min.js']
+  });

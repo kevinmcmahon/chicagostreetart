@@ -1,0 +1,14 @@
+.row
+  .twelve.columns.offset-by-two
+    %h2.centered=@photo.title
+    .detailmap
+      #map_canvas
+    %table
+      %tbody
+        %tr
+          %td Photo Id
+          %td=@photo.photo_id
+.row
+  .twelve.columns.offset-by-two
+%footer
+  = partial :'partials/footer'

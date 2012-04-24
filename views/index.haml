@@ -1,0 +1,17 @@
+.row
+  .twelve.columns.offset-by-two
+    %header
+      = partial :'partials/header'
+.row
+  .twelve.columns.offset-by-two
+    %h1.centered Chicago Street Art Finder
+    %form{ :id => "address_form", :action => "/findart", :method => "get"}
+      %input{:type => "text", :name => "address", :id =>"addressfield", :placeholder => "Enter a Chicago Address"}
+      .buttons
+        %input{:type => "submit", :value => "Look Up Address", :class => "btn default"}
+        %input{:type => "button", :value => "Get Current Location", :class => "btn primary", :id =>"btnLookupLocation"}
+.row
+  .twelve.columns.offset-by-two
+    %footer
+      = partial :'partials/footer'
+

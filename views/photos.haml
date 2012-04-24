@@ -1,0 +1,19 @@
+.row
+  %h2.centered Closest Street Art
+  .twelve.columns.offset-by-two
+    #map_canvas
+    %table
+      %tbody
+        %tr.blue
+          %th.centered Distance (mi)
+          %th.centered Title
+        - @photos.each do |row|
+          %tr
+            %td.centered= ("%0.2f" % row[:dist]).to_f
+            %td
+              %a{ :href=> '/photo/'+ row[:id].to_s }
+                =row[:title]
+.row
+  .twelve.columns.offset-by-two
+    %footer
+      = partial :'partials/footer'
