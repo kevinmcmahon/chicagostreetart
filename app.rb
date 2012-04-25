@@ -40,7 +40,7 @@ helpers do
   def create_markers(array)
       js = "var markers = [\n"
       array.each do |i|
-        js << "{ lat: #{i['latitude']}, lng: #{i.longitude}, name: '#{i.title}' },\n"
+        js << "{ lat: #{i['latitude']}, lng: #{i.longitude}, name: '#{i.title}', url: '#{i.url}'},\n"
       end
       js << "];\n"
       js

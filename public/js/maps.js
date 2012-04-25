@@ -47,7 +47,9 @@ var Map = {
 	      var title = document.createElement("DIV");
 	      title.innerHTML = data.name;
 	      content.appendChild(title);
-	      var streetview = document.createElement("DIV");
+	      var streetview = document.createElement("IMG");
+			
+		  streetview.src = data.url;
 	      streetview.style.width = "200px";
 	      streetview.style.height = "200px";
 	      content.appendChild(streetview);
@@ -63,14 +65,7 @@ var Map = {
 	      // Handle the DOM ready event to create the StreetView panorama
 	      // as it can only be created once the DIV inside the infowindow is loaded in the DOM.
 	      google.maps.event.addListenerOnce(infowindow, "domready", function() {
-	        var panorama = new google.maps.StreetViewPanorama(streetview, {
-	            navigationControl: false,
-	            enableCloseButton: false,
-	            addressControl: false,
-	            linksControl: false,
-	            visible: true,
-	            position: marker.getPosition()
-	        });
+	      	
 	      });
 	    }
 
