@@ -2,17 +2,22 @@
   %h2.centered Closest Street Art
   .twelve.columns.offset-by-two
     #map_canvas
+    .detail-note.centered
+      Click on the marker to see an image of the art.
     %table
       %tbody
         %tr.blue
           %th.centered Distance (mi)
           %th.centered Title
+          %th.centered Thumbnail
         - @photos.each do |row|
           %tr
             %td.centered= ("%0.2f" % row[:dist]).to_f
             %td
               %a{ :href=> '/photo/'+ row[:id].to_s }
                 =row[:title]
+            %td
+              %img{ :src => row[:url], :width=> '160' }
 .row
   .twelve.columns.offset-by-two
     %footer

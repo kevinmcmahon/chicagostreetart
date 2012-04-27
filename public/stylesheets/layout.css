@@ -84,6 +84,11 @@ body {
 	font-weight: 400;
 }
 
+.detail-note {
+	font-style: italic;
+	margin-bottom:40px;
+}
+
 #map_canvas {
   height: 400px;
   width: 100%;
