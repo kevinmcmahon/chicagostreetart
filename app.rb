@@ -17,7 +17,7 @@ set :public_folder, 'public'
 set :haml, {:format => :html5} # default Haml format is :xhtml
 
 #DataMapper::Logger.new($stdout, :debug)
-DataMapper::setup(:default, ENV['DATABASE_URL'] || "postgres://localhost:5432/streetart")
+DataMapper::setup(:default, ENV['DATABASE_URL'] || "postgres://localhost:5432/chicago_db")
 
 # Allow rendering of partials. See: https://gist.github.com/119874
 helpers Sinatra::Partials
