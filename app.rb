@@ -17,7 +17,7 @@ set :public_folder, 'public'
 set :haml, {:format => :html5} # default Haml format is :xhtml
 
 #DataMapper::Logger.new($stdout, :debug)
-DataMapper::setup(:default, ENV['DATABASE_URL'] || "postgres://localhost:5432/chicago_db")
+DataMapper::setup(:default, ENV['DATABASE_URL'] || "postgres://localhost:5432/streetart")
 
 # Allow rendering of partials. See: https://gist.github.com/119874
 helpers Sinatra::Partials
@@ -76,7 +76,7 @@ get '/findart' do
     @lng = result[0].longitude
   end
 
-  @photos = ArtFinder.find(@lat,@lng,5)
+  @photos = ArtFinder.find(@lat,@lng,10)
   haml :photos, :layout => :'layouts/map'
 end
 

@@ -5,7 +5,7 @@ require 'data_mapper'
 require './photo.rb'
 
 DataMapper::Logger.new($stdout, :debug)
-DataMapper::setup(:default,ENV['DATABASE_URL'] || 'postgres://localhost/streetart')
+DataMapper::setup(:default,'postgres://localhost:5432/chicago_db')
 DataMapper.finalize
 
 FlickRaw.api_key=ENV['FLICKR_API']
