@@ -1,6 +1,7 @@
 .row
   .twelve.columns.offset-by-two
     %h2.centered=@photo.title
+    %img.detailphoto{ :src => @photo.url }
     .detailmap
       #map_canvas
     %table
