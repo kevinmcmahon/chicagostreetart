@@ -77,7 +77,7 @@ get '/findart' do
   end
 
   @photos = ArtFinder.find(@lat,@lng,10)
-  haml :photos, :layout => :'layouts/map'
+  haml :artlist, :layout => :'layouts/map'
 end
 
 get '/photo/:id?' do
